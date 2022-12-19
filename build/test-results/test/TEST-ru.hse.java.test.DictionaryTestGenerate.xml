@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ru.hse.java.test.DictionaryTestGenerate" tests="40" skipped="0" failures="0" errors="0" timestamp="2022-12-19T21:29:24" hostname="192.168.0.9" time="0.106">
+  <properties/>
+  <testcase name="testContainsValueAfterRemove()" classname="ru.hse.java.test.DictionaryTestGenerate" time="0.025"/>
+  <testcase name="testKeySetIteratorNextThrowOptimization()" classname="ru.hse.java.test.DictionaryTestGenerate" time="0.005"/>
+  <testcase name="testKeySetIteratorNextThrow()" classname="ru.hse.java.test.DictionaryTestGenerate" time="0.001"/>
+  <testcase name="testGetAfterPut()" classname="ru.hse.java.test.DictionaryTestGenerate" time="0.002"/>
+  <testcase name="testEntrySetRemoveCheckValues()" classname="ru.hse.java.test.DictionaryTestGenerate" time="0.002"/>
+  <testcase name="testGetAfterRemove()" classname="ru.hse.java.test.DictionaryTestGenerate" time="0.001"/>
+  <testcase name="testKeySetIteratorHasNextAfterNext()" classname="ru.hse.java.test.DictionaryTestGenerate" time="0.001"/>
+  <testcase name="testGetAfterReplace()" classname="ru.hse.java.test.DictionaryTestGenerate" time="0.001"/>
+  <testcase name="testPut()" classname="ru.hse.java.test.DictionaryTestGenerate" time="0.001"/>
+  <testcase name="testValuesIteratorNextThrowOptimization()" classname="ru.hse.java.test.DictionaryTestGenerate" time="0.004"/>
+  <testcase name="testGetNotExist()" classname="ru.hse.java.test.DictionaryTestGenerate" time="0.001"/>
+  <testcase name="testRemoveNotExist()" classname="ru.hse.java.test.DictionaryTestGenerate" time="0.001"/>
+  <testcase name="testRemoveValue()" classname="ru.hse.java.test.DictionaryTestGenerate" time="0.002"/>
+  <testcase name="testEntrySetIteratorNextThrowOptimization()" classname="ru.hse.java.test.DictionaryTestGenerate" time="0.002"/>
+  <testcase name="testPutSize()" classname="ru.hse.java.test.DictionaryTestGenerate" time="0.002"/>
+  <testcase name="testValuesIteratorHasNextAfterNext()" classname="ru.hse.java.test.DictionaryTestGenerate" time="0.002"/>
+  <testcase name="testSizeAfterPut()" classname="ru.hse.java.test.DictionaryTestGenerate" time="0.001"/>
+  <testcase name="testKeySetRemoveCheckValues()" classname="ru.hse.java.test.DictionaryTestGenerate" time="0.001"/>
+  <testcase name="testValuesIteratorNextThrow()" classname="ru.hse.java.test.DictionaryTestGenerate" time="0.001"/>
+  <testcase name="testSizeAfterReplace()" classname="ru.hse.java.test.DictionaryTestGenerate" time="0.001"/>
+  <testcase name="testEntrySetIteratorRemoveSimple()" classname="ru.hse.java.test.DictionaryTestGenerate" time="0.001"/>
+  <testcase name="testSizeAfterRemove()" classname="ru.hse.java.test.DictionaryTestGenerate" time="0.001"/>
+  <testcase name="testContainsKeyAfterPutFalse()" classname="ru.hse.java.test.DictionaryTestGenerate" time="0.001"/>
+  <testcase name="testContainsKeyAfterPutTrue()" classname="ru.hse.java.test.DictionaryTestGenerate" time="0.001"/>
+  <testcase name="testGenNullKey()" classname="ru.hse.java.test.DictionaryTestGenerate" time="0.001"/>
+  <testcase name="testPutReplace()" classname="ru.hse.java.test.DictionaryTestGenerate" time="0.0"/>
+  <testcase name="testEntrySetIteratorNextThrow()" classname="ru.hse.java.test.DictionaryTestGenerate" time="0.001"/>
+  <testcase name="testSizeAfterClear()" classname="ru.hse.java.test.DictionaryTestGenerate" time="0.001"/>
+  <testcase name="testEntrySetIteratorHasNextAfterNext()" classname="ru.hse.java.test.DictionaryTestGenerate" time="0.0"/>
+  <testcase name="testKeySetIteratorRemoveSimple()" classname="ru.hse.java.test.DictionaryTestGenerate" time="0.001"/>
+  <testcase name="testValuesIteratorRemoveSimple()" classname="ru.hse.java.test.DictionaryTestGenerate" time="0.001"/>
+  <testcase name="testContainsValueAfterPutTrue()" classname="ru.hse.java.test.DictionaryTestGenerate" time="0.0"/>
+  <testcase name="testContainsOtherValueAfterRemove()" classname="ru.hse.java.test.DictionaryTestGenerate" time="0.0"/>
+  <testcase name="testValuesRemoveCheckValues()" classname="ru.hse.java.test.DictionaryTestGenerate" time="0.001"/>
+  <testcase name="testContainsValueAfterPutFalse()" classname="ru.hse.java.test.DictionaryTestGenerate" time="0.001"/>
+  <testcase name="testContainsValueAfterClear()" classname="ru.hse.java.test.DictionaryTestGenerate" time="0.001"/>
+  <testcase name="testContainsKeyAfterRemove()" classname="ru.hse.java.test.DictionaryTestGenerate" time="0.0"/>
+  <testcase name="testRemoveAll()" classname="ru.hse.java.test.DictionaryTestGenerate" time="0.001"/>
+  <testcase name="testRemoveExc()" classname="ru.hse.java.test.DictionaryTestGenerate" time="0.002"/>
+  <testcase name="testRemoveKey()" classname="ru.hse.java.test.DictionaryTestGenerate" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

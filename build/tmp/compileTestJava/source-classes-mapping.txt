@@ -1,0 +1,4 @@
+ru/hse/java/test/DictionaryTestGenerate.java
+ ru.hse.java.test.DictionaryTestGenerate
+ru/hse/java/test/DictionaryTests.java
+ ru.hse.java.test.DictionaryTests
