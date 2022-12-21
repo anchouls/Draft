@@ -5,7 +5,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.*;
 
 public class DictionaryImpl2<K, V> implements Dictionary<K, V> {
-    private int size;
+    public int size;
     private int capacity;
     private int preCapacity;
     private List<MyLinkedList<AbstractMap.SimpleEntry<K, V>>> data;
