@@ -126,6 +126,13 @@ public class DictionaryImpl2<K, V> implements Dictionary<K, V> {
         return null;
     }
 
+    @Override
+    public void putAll(@NotNull Map<? extends K, ? extends V> m) {
+        for (Map.Entry<? extends K, ? extends V> element : m.entrySet()) {
+            put(element.getKey(), element.getValue());
+        }
+    }
+
     private void rehashing(boolean more) {
         if (more) {
             preCapacity *= resizeCoeff;
@@ -133,20 +140,13 @@ public class DictionaryImpl2<K, V> implements Dictionary<K, V> {
             preCapacity /= resizeCoeff;
         }
         capacity = updateCapacity(preCapacity);
-        List<MyLinkedList<AbstractMap.SimpleEntry<K, V>>> oldData = data;
+        List<MyLinkedList<AbstractMap.SimpleEntry<K, V>>> prevData = data;
         data = genArrayList(capacity);
         size = 0;
-        for (MyLinkedList<AbstractMap.SimpleEntry<K, V>> list : oldData) {
+        for (MyLinkedList<AbstractMap.SimpleEntry<K, V>> list : prevData) {
             for (Entry<K, V> element : list) {
                 put(element.getKey(), element.getValue());
             }
-        }
-    }
-
-    @Override
-    public void putAll(@NotNull Map<? extends K, ? extends V> m) {
-        for (Map.Entry<? extends K, ? extends V> element : m.entrySet()) {
-            put(element.getKey(), element.getValue());
         }
     }
 
