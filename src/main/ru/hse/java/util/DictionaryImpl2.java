@@ -115,7 +115,7 @@ public class DictionaryImpl2<K, V> implements Dictionary<K, V> {
             AbstractMap.SimpleEntry<K, V> element = it.next();
             if (key.equals(element.getKey())) {
                 V oldValue = element.getValue();
-                it.remove();
+                extractRemove(it);
                 size--;
                 if (size < capacity * loadFactor / resizeCoeff - outside) {
                     rehashing(false);
@@ -124,6 +124,10 @@ public class DictionaryImpl2<K, V> implements Dictionary<K, V> {
             }
         }
         return null;
+    }
+
+    private void extractRemove(Iterator<AbstractMap.SimpleEntry<K, V>> it) {
+        it.remove();
     }
 
     @Override
