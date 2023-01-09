@@ -320,7 +320,6 @@ public class DictionaryImpl2<K, V> implements Dictionary<K, V> {
     }
 
     @Target(value=ElementType.FIELD)
-    @Retention(value= RetentionPolicy.RUNTIME)
     public @interface Name {
         String name();
         String type() default "string";
