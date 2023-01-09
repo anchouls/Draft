@@ -2,6 +2,7 @@ package ru.hse.java.util;
 
 import org.jetbrains.annotations.NotNull;
 
+import java.lang.annotation.*;
 import java.util.*;
 
 public class DictionaryImpl2<K, V> implements Dictionary<K, V> {
@@ -316,5 +317,11 @@ public class DictionaryImpl2<K, V> implements Dictionary<K, V> {
             element.remove();
             size--;
         }
+    }
+
+    @Target(value=ElementType.FIELD)
+    public @interface Name {
+        String name();
+        String type() default "string";
     }
 }
