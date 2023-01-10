@@ -312,7 +312,6 @@ public class DictionaryImpl2<K, V> implements Dictionary<K, V> {
             return element.next();
         }
 
-        @Override
         public void remove() {
             element.remove();
             size--;
