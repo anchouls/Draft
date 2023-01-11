@@ -18,10 +18,10 @@ public class DictionaryImpl2<K, V> implements Dictionary<K, V> {
     private final int outside;
 
     public DictionaryImpl2() {
-        this(0.75, 2, 10);
+        this(2, 0.75, 10);
     }
 
-    public DictionaryImpl2(double loadFactor, int resizeCoeff, int outside) {
+    public DictionaryImpl2(int resizeCoeff, double loadFactor, int outside) {
         this.loadFactor = loadFactor;
         this.resizeCoeff = resizeCoeff;
         this.outside = outside;
@@ -312,6 +312,7 @@ public class DictionaryImpl2<K, V> implements Dictionary<K, V> {
             return element.next();
         }
 
+        @Override
         public void remove() {
             element.remove();
             size--;
