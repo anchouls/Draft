@@ -1,6 +1,6 @@
 package ru.hse.java.test;
 
-import ru.hse.java.util.DictionaryImpl2;
+import ru.hse.java.util.DictionaryImpl;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -12,7 +12,7 @@ public class DictionaryTests {
 
     @Test
     public void testStress() {
-        DictionaryImpl2<Integer, String> dictionary = new DictionaryImpl2<>();
+        DictionaryImpl<Integer, String> dictionary = new DictionaryImpl<>();
         HashMap<Integer, String> hashMap = new HashMap<>();
         Random random = new Random();
         random.setSeed(14);
@@ -50,60 +50,60 @@ public class DictionaryTests {
 
     @Test
     public void testEmptyInit() {
-        DictionaryImpl2<Integer, String> dictionary = new DictionaryImpl2<>();
+        DictionaryImpl<Integer, String> dictionary = new DictionaryImpl<>();
         Assertions.assertTrue(dictionary.isEmpty());
     }
 
     @Test
     void testSizeInit() {
-        Map<Integer, Integer> map = new DictionaryImpl2<>();
+        Map<Integer, Integer> map = new DictionaryImpl<>();
         Assertions.assertEquals(0, map.size());
     }
 
     @Test
     void testContainsKeySomeHash() {
-        Map<String, Integer> map = new DictionaryImpl2<>();
+        Map<String, Integer> map = new DictionaryImpl<>();
         map.put("Aa", 1);
         Assertions.assertFalse(map.containsKey("BB"));
     }
 
     @Test
     void testNegateKey() {
-        Map<Integer, Integer> map = new DictionaryImpl2<>();
+        Map<Integer, Integer> map = new DictionaryImpl<>();
         map.put(-1, 20);
         Assertions.assertEquals(map.get(-1), 20);
     }
 
     @Test
     void testMaxKey() {
-        Map<Integer, Integer> map = new DictionaryImpl2<>();
+        Map<Integer, Integer> map = new DictionaryImpl<>();
         map.put(Integer.MAX_VALUE, Integer.MAX_VALUE);
         Assertions.assertEquals(Integer.MAX_VALUE, map.get(Integer.MAX_VALUE));
     }
 
     @Test
     void testMinKey() {
-        Map<Integer, Integer> map = new DictionaryImpl2<>();
+        Map<Integer, Integer> map = new DictionaryImpl<>();
         map.put(Integer.MIN_VALUE, Integer.MIN_VALUE);
         Assertions.assertEquals(Integer.MIN_VALUE, map.get(Integer.MIN_VALUE));
     }
 
     @Test
     void testPutKeyIsEmptyString() {
-        Map<String, Integer> map = new DictionaryImpl2<>();
+        Map<String, Integer> map = new DictionaryImpl<>();
         map.put("", 1);
         Assertions.assertEquals(1, map.get(""));
     }
 
     @Test
     void testPutNullKey() {
-        Map<String, Integer> map = new DictionaryImpl2<>();
+        Map<String, Integer> map = new DictionaryImpl<>();
         Assertions.assertThrows(NullPointerException.class, () -> map.put(null, 1));
     }
 
     @Test
     void testPutAllBasic() {
-        Map<Integer, Integer> map = new DictionaryImpl2<>();
+        Map<Integer, Integer> map = new DictionaryImpl<>();
         Map<Integer, Integer> donorMap = new HashMap<>();
         for (int i = 0; i < 100; i++) {
             donorMap.put(i, i * 2 + 1);
@@ -117,7 +117,7 @@ public class DictionaryTests {
 
     @Test
     void testPutAllOver() {
-        Map<Integer, Integer> map = new DictionaryImpl2<>();
+        Map<Integer, Integer> map = new DictionaryImpl<>();
         Map<Integer, Integer> donorMap = new HashMap<>();
         for (int i = 0; i < 100; i++) {
             donorMap.put(i, i * 2 + 1);
@@ -132,7 +132,7 @@ public class DictionaryTests {
 
     @Test
     void testClearEmpty() {
-        Map<Integer, Integer> map = new DictionaryImpl2<>();
+        Map<Integer, Integer> map = new DictionaryImpl<>();
         for (int i = 0; i < 100; i++) {
             map.put(i, i * 2 + 1);
         }
@@ -142,7 +142,7 @@ public class DictionaryTests {
 
     @Test
     void testClearNotExists() {
-        Map<Integer, Integer> map = new DictionaryImpl2<>();
+        Map<Integer, Integer> map = new DictionaryImpl<>();
         for (int i = 0; i < 100; i++) {
             map.put(i, i * 2 + 1);
         }
@@ -152,7 +152,7 @@ public class DictionaryTests {
 
     @Test
     void testKeySetCorrectness() {
-        Map<Integer, Integer> map = new DictionaryImpl2<>();
+        Map<Integer, Integer> map = new DictionaryImpl<>();
         for (int i = 0; i < 100; i++) {
             map.put(i, i * 2 + 1);
         }
@@ -167,7 +167,7 @@ public class DictionaryTests {
 
     @Test
     void testKeySetHashMap() {
-        Map<Integer, Integer> map = new DictionaryImpl2<>();
+        Map<Integer, Integer> map = new DictionaryImpl<>();
         Map<Integer, Integer> hashMap = new HashMap<>();
         for (int i = 0; i < 100; i++) {
             map.put(i, i * 2 + 1);
@@ -178,7 +178,7 @@ public class DictionaryTests {
 
     @Test
     void testManyKeySet() {
-        Map<Integer, Integer> map = new DictionaryImpl2<>();
+        Map<Integer, Integer> map = new DictionaryImpl<>();
         for (int i = 0; i < 100; i++) {
             map.put(i, i * 2 + 1);
         }
@@ -203,7 +203,7 @@ public class DictionaryTests {
 
     @Test
     void testKeySetDependence() {
-        Map<Integer, Integer> map = new DictionaryImpl2<>();
+        Map<Integer, Integer> map = new DictionaryImpl<>();
         for (int i = 0; i < 100; i++) {
             map.put(i, i * 2 + 1);
         }
@@ -223,14 +223,14 @@ public class DictionaryTests {
 
     @Test
     void testKeySetIteratorHasNextEmpty() {
-        Map<Integer, Integer> map = new DictionaryImpl2<>();
+        Map<Integer, Integer> map = new DictionaryImpl<>();
         Set<Integer> set = map.keySet();
         Assertions.assertFalse(set.iterator().hasNext());
     }
 
     @Test
     void testKeySetIteratorHasNextSimple() {
-        Map<Integer, Integer> map = new DictionaryImpl2<>();
+        Map<Integer, Integer> map = new DictionaryImpl<>();
         map.put(1, 2);
         Set<Integer> set = map.keySet();
         Assertions.assertTrue(set.iterator().hasNext());
@@ -238,7 +238,7 @@ public class DictionaryTests {
 
     @Test
     void testKeySetIteratorNextSimple() {
-        Map<Integer, Integer> map = new DictionaryImpl2<>();
+        Map<Integer, Integer> map = new DictionaryImpl<>();
         map.put(1, 2);
         Set<Integer> set = map.keySet();
         Assertions.assertEquals(1, set.iterator().next());
@@ -246,7 +246,7 @@ public class DictionaryTests {
 
     @Test
     void testKeySetIteratorHasNextEnd() {
-        Map<Integer, Integer> map = new DictionaryImpl2<>();
+        Map<Integer, Integer> map = new DictionaryImpl<>();
         map.put(1, 2);
         Set<Integer> set = map.keySet();
         Iterator<Integer> it = set.iterator();
@@ -256,7 +256,7 @@ public class DictionaryTests {
 
     @Test
     void testKeySetRemoveAll() {
-        Map<Integer, Integer> map = new DictionaryImpl2<>();
+        Map<Integer, Integer> map = new DictionaryImpl<>();
         for (int i = 0; i < 100; i++) {
             map.put(i, i * 2 + 1);
         }
@@ -270,7 +270,7 @@ public class DictionaryTests {
 
     @Test
     void testKeySetIteratorNextHashNextStress() {
-        Map<Integer, Integer> map = new DictionaryImpl2<>();
+        Map<Integer, Integer> map = new DictionaryImpl<>();
         for (int i = 0; i < 10000; i++) {
             map.put(i, i * 2 + 1);
         }
@@ -285,7 +285,7 @@ public class DictionaryTests {
 
     @Test
     void testEntrySetCorrectness() {
-        Map<Integer, Integer> map = new DictionaryImpl2<>();
+        Map<Integer, Integer> map = new DictionaryImpl<>();
         for (int i = 0; i < 100; i++) {
             map.put(i, i * 2 + 1);
         }
@@ -297,7 +297,7 @@ public class DictionaryTests {
 
     @Test
     void testEntrySetHashMap() {
-        Map<Integer, Integer> map = new DictionaryImpl2<>();
+        Map<Integer, Integer> map = new DictionaryImpl<>();
         Map<Integer, Integer> hashMap = new HashMap<>();
         for (int i = 0; i < 100; i++) {
             map.put(i, i * 2 + 1);
@@ -308,7 +308,7 @@ public class DictionaryTests {
 
     @Test
     void testEntrySetDependence() {
-        Map<Integer, Integer> map = new DictionaryImpl2<>();
+        Map<Integer, Integer> map = new DictionaryImpl<>();
         for (int i = 0; i < 100; i++) {
             map.put(i, i * 2 + 1);
         }
@@ -322,14 +322,14 @@ public class DictionaryTests {
 
     @Test
     void testEntrySetIteratorHasNextEmpty() {
-        Map<Integer, Integer> map = new DictionaryImpl2<>();
+        Map<Integer, Integer> map = new DictionaryImpl<>();
         Set<Map.Entry<Integer, Integer>> set = map.entrySet();
         Assertions.assertFalse(set.iterator().hasNext());
     }
 
     @Test
     void testEntrySetIteratorHasNextSimple() {
-        Map<Integer, Integer> map = new DictionaryImpl2<>();
+        Map<Integer, Integer> map = new DictionaryImpl<>();
         map.put(1, 2);
         Set<Map.Entry<Integer, Integer>> set = map.entrySet();
         Assertions.assertTrue(set.iterator().hasNext());
@@ -337,7 +337,7 @@ public class DictionaryTests {
 
     @Test
     void testEntrySetIteratorNextSimple() {
-        Map<Integer, Integer> map = new DictionaryImpl2<>();
+        Map<Integer, Integer> map = new DictionaryImpl<>();
         map.put(1, 2);
         Set<Map.Entry<Integer, Integer>> set = map.entrySet();
         Assertions.assertEquals(2, set.iterator().next().getValue());
@@ -345,7 +345,7 @@ public class DictionaryTests {
 
     @Test
     void testEntrySetIteratorHasNextEnd() {
-        Map<Integer, Integer> map = new DictionaryImpl2<>();
+        Map<Integer, Integer> map = new DictionaryImpl<>();
         map.put(1, 2);
         Set<Map.Entry<Integer, Integer>> set = map.entrySet();
         Iterator<Map.Entry<Integer, Integer>> it = set.iterator();
@@ -355,7 +355,7 @@ public class DictionaryTests {
 
     @Test
     void testEntrySetRemoveAll() {
-        Map<Integer, Integer> map = new DictionaryImpl2<>();
+        Map<Integer, Integer> map = new DictionaryImpl<>();
         for (int i = 0; i < 100; i++) {
             map.put(i, i * 2 + 1);
         }
@@ -369,7 +369,7 @@ public class DictionaryTests {
 
     @Test
     void testEntrySetIteratorNextHashNextStress() {
-        Map<Integer, Integer> map = new DictionaryImpl2<>();
+        Map<Integer, Integer> map = new DictionaryImpl<>();
         for (int i = 0; i < 10000; i++) {
             map.put(i, i * 2 + 1);
         }
@@ -384,7 +384,7 @@ public class DictionaryTests {
 
     @Test
     void testValuesCorrectness() {
-        Map<Integer, Integer> map = new DictionaryImpl2<>();
+        Map<Integer, Integer> map = new DictionaryImpl<>();
         for (int i = 0; i < 100; i++) {
             map.put(i, i * 2 + 1);
         }
@@ -399,7 +399,7 @@ public class DictionaryTests {
 
     @Test
     void testValuesHashMap() {
-        Map<Integer, Integer> map = new DictionaryImpl2<>();
+        Map<Integer, Integer> map = new DictionaryImpl<>();
         Map<Integer, Integer> hashMap = new HashMap<>();
         for (int i = 0; i < 10; i++) {
             map.put(i, i * 2 + 1);
@@ -410,7 +410,7 @@ public class DictionaryTests {
 
     @Test
     void testValuesDependence() {
-        Map<Integer, Integer> map = new DictionaryImpl2<>();
+        Map<Integer, Integer> map = new DictionaryImpl<>();
         for (int i = 0; i < 100; i++) {
             map.put(i, i * 2 + 1);
         }
@@ -430,14 +430,14 @@ public class DictionaryTests {
 
     @Test
     void testValuesIteratorHasNextEmpty() {
-        Map<Integer, Integer> map = new DictionaryImpl2<>();
+        Map<Integer, Integer> map = new DictionaryImpl<>();
         Collection<Integer> coll = map.values();
         Assertions.assertFalse(coll.iterator().hasNext());
     }
 
     @Test
     void testValuesIteratorHasNextSimple() {
-        Map<Integer, Integer> map = new DictionaryImpl2<>();
+        Map<Integer, Integer> map = new DictionaryImpl<>();
         map.put(1, 2);
         Collection<Integer> coll = map.values();
         Assertions.assertTrue(coll.iterator().hasNext());
@@ -445,7 +445,7 @@ public class DictionaryTests {
 
     @Test
     void testValuesIteratorNextSimple() {
-        Map<Integer, Integer> map = new DictionaryImpl2<>();
+        Map<Integer, Integer> map = new DictionaryImpl<>();
         map.put(1, 2);
         Collection<Integer> coll = map.values();
         Assertions.assertEquals(2, coll.iterator().next());
@@ -453,7 +453,7 @@ public class DictionaryTests {
 
     @Test
     void testValuesIteratorHasNextEnd() {
-        Map<Integer, Integer> map = new DictionaryImpl2<>();
+        Map<Integer, Integer> map = new DictionaryImpl<>();
         map.put(1, 2);
         Collection<Integer> coll = map.keySet();
         Iterator<Integer> it = coll.iterator();
@@ -463,7 +463,7 @@ public class DictionaryTests {
 
     @Test
     void testValuesRemoveAll() {
-        Map<Integer, Integer> map = new DictionaryImpl2<>();
+        Map<Integer, Integer> map = new DictionaryImpl<>();
         for (int i = 0; i < 100; i++) {
             map.put(i, i * 2 + 1);
         }
@@ -477,7 +477,7 @@ public class DictionaryTests {
 
     @Test
     void testValuesIteratorNextHashNextStress() {
-        Map<Integer, Integer> map = new DictionaryImpl2<>();
+        Map<Integer, Integer> map = new DictionaryImpl<>();
         for (int i = 0; i < 10000; i++) {
             map.put(i, i * 2 + 1);
         }
@@ -492,7 +492,7 @@ public class DictionaryTests {
 
     @Test
     void testDecreaseCapacity() {
-        Map<Integer, Integer> map = new DictionaryImpl2<>();
+        Map<Integer, Integer> map = new DictionaryImpl<>();
         for (int i = 0; i < 100; i++) {
             map.put(i, i * 2 + 1);
         }

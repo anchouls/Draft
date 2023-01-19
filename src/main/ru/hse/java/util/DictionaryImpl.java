@@ -5,7 +5,7 @@ import org.jetbrains.annotations.NotNull;
 import java.lang.annotation.*;
 import java.util.*;
 
-public class DictionaryImpl2<K, V> implements Dictionary<K, V> {
+public class DictionaryImpl<K, V> implements Dictionary<K, V> {
     public int size;
     private int capacity;
     private int preCapacity;
@@ -17,11 +17,11 @@ public class DictionaryImpl2<K, V> implements Dictionary<K, V> {
     private final int resizeCoeff;
     private final int outside;
 
-    public DictionaryImpl2() {
-        this(2, 0.75, 10);
+    public DictionaryImpl() {
+        this(0.75, 2, 10);
     }
 
-    public DictionaryImpl2(int resizeCoeff, double loadFactor, int outside) {
+    public DictionaryImpl(double loadFactor, int resizeCoeff, int outside) {
         this.loadFactor = loadFactor;
         this.resizeCoeff = resizeCoeff;
         this.outside = outside;

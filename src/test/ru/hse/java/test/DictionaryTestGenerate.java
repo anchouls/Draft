@@ -3,16 +3,16 @@ package ru.hse.java.test;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import ru.hse.java.util.DictionaryImpl2;
+import ru.hse.java.util.DictionaryImpl;
 
 import java.util.*;
 
 public class DictionaryTestGenerate {
-    DictionaryImpl2<Integer, Integer> map;
+    DictionaryImpl<Integer, Integer> map;
 
     @BeforeEach
     void generateSimple() {
-        map = new DictionaryImpl2<>();
+        map = new DictionaryImpl<>();
         map.put(1, 2);
         map.put(2, 3);
         map.put(3, 4);
