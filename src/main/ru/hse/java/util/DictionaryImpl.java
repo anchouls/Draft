@@ -27,12 +27,12 @@ public class DictionaryImpl<K, V> implements Dictionary<K, V> {
         this.outside = outside;
         preCapacity = 1;
         size = 0;
-        capacity = updateCapacity(preCapacity);
+        capacity = updateCapacity2(preCapacity);
         data = genArrayList(capacity);
     }
 
-    private static int updateCapacity(int preCap) {
-        return 6 * preCap + 1;
+    private static int updateCapacity2(int preCapacity) {
+        return 6 * preCapacity + 1;
     }
 
     private List<MyLinkedList<AbstractMap.SimpleEntry<K, V>>> genArrayList(int newCapacity) {
