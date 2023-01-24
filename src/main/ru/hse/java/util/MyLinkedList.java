@@ -5,7 +5,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.*;
 
 public class MyLinkedList<E> extends AbstractCollection<E> {
-    private Node head;
+    private final Node head;
     private Node tail;
     private int size;
 
