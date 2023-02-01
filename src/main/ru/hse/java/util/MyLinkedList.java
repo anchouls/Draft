@@ -37,7 +37,7 @@ public class MyLinkedList<E> extends AbstractCollection<E> {
             }
 
             @Override
-            public E next() throws IllegalStateException {
+            public E next() {
                 E value = cur.next.value;
                 if (value == null) throw new NullPointerException();
                 cur = cur.next;
