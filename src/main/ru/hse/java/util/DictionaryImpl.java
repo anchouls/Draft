@@ -55,6 +55,12 @@ public class DictionaryImpl<K, V> implements Dictionary<K, V> {
 
     @Override
     public boolean containsKey(Object key) {
+        Runnable r1 = new Runnable() {
+            @Override
+            public void run() {
+                System.out.println("Using Anonymous class");
+            }
+        };
         int ind = Math.abs(key.hashCode() % capacity);
         for (Entry<K, V> element : data.get(ind)) {
             if (key.equals(element.getKey())) {
