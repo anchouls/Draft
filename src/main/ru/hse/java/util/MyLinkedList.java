@@ -37,8 +37,9 @@ public class MyLinkedList<E> extends AbstractCollection<E> {
             }
 
             @Override
-            public E next() {
+            public E next() throws NullPointerException {
                 E value = cur.next.value;
+                if (value == null) throw new NullPointerException();
                 cur = cur.next;
                 return value;
             }
@@ -66,13 +67,9 @@ public class MyLinkedList<E> extends AbstractCollection<E> {
 
     @Override
     public boolean add(E e) {
-        try {
-            tail.next = new Node(e, tail);
-            tail = tail.next;
-            size++;
-        } catch (IllegalStateException exception) {
-            System.out.println("error");
-        }
+        tail.next = new Node(e, tail);
+        tail = tail.next;
+        size++;
         return true;
     }
 
