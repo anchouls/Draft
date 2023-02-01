@@ -66,9 +66,13 @@ public class MyLinkedList<E> extends AbstractCollection<E> {
 
     @Override
     public boolean add(E e) {
-        tail.next = new Node(e, tail);
-        tail = tail.next;
-        size++;
+        try {
+            tail.next = new Node(e, tail);
+            tail = tail.next;
+            size++;
+        } catch (NullPointerException exception) {
+            System.out.println("error");
+        }
         return true;
     }
 
