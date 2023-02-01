@@ -1,5 +1,8 @@
 package ru.hse.java.util;
 
 public abstract class A {
-    public abstract int a(int x, int y);
+    public int a(int x, int y) {
+        System.out.println(y);
+        return x + y;
+    }
 }
