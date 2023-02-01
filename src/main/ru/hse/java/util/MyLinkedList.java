@@ -70,7 +70,7 @@ public class MyLinkedList<E> extends AbstractCollection<E> {
             tail.next = new Node(e, tail);
             tail = tail.next;
             size++;
-        } catch (NullPointerException exception) {
+        } catch (IllegalStateException exception) {
             System.out.println("error");
         }
         return true;
