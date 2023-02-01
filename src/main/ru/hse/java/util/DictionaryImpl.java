@@ -76,7 +76,7 @@ public class DictionaryImpl<K, V> implements Dictionary<K, V> {
         return false;
     }
 
-    private MyLinkedList<AbstractMap.SimpleEntry<K, V>> getDataList(Object key) {
+    public MyLinkedList<AbstractMap.SimpleEntry<K, V>> getDataList(Object key) {
         return data.get(Math.abs(key.hashCode() % capacity));
     }
 
