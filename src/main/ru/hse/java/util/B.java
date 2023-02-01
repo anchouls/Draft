@@ -1,8 +1,9 @@
 package ru.hse.java.util;
 
-public class A {
+public class B extends A{
+    @Override
     public int a(int x, int y) {
-        System.out.println(x);
+        System.out.println(y);
         return x + y;
     }
 }
