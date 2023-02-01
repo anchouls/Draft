@@ -55,7 +55,6 @@ public class DictionaryImpl<K, V> implements Dictionary<K, V> {
 
     @Override
     public boolean containsKey(Object key) {
-        Runnable r1 = () -> System.out.println("Using Anonymous class");
         int ind = Math.abs(key.hashCode() % capacity);
         for (Entry<K, V> element : data.get(ind)) {
             if (key.equals(element.getKey())) {
@@ -134,9 +133,7 @@ public class DictionaryImpl<K, V> implements Dictionary<K, V> {
 
     @Override
     public void putAll(@NotNull Map<? extends K, ? extends V> m) {
-        for (Map.Entry<? extends K, ? extends V> element : m.entrySet()) {
-            put(element.getKey(), element.getValue());
-        }
+        m.entrySet().forEach(element -> put(element.getKey(), element.getValue()));
     }
 
     private void rehashing(boolean more) {
