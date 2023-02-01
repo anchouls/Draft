@@ -6,7 +6,7 @@ import java.util.*;
 
 public class MyLinkedList<E> extends AbstractCollection<E> {
     private Node head;
-    private Node tail;
+    public Node tail;
     private int size;
 
     public MyLinkedList() {
