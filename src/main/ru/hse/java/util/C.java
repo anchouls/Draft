@@ -9,6 +9,10 @@ public class C {
     private int k = 22;
     private int x = (e == 4) ? k : ((c == 7) ? b : c);
     public int b(int x, int y) {
+        return extract();
+    }
+
+    public int extract() {
         int z = x + 5;
         a = 10;
         b = a + b + 3;
