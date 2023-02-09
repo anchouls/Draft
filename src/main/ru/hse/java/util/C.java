@@ -9,8 +9,11 @@ public class C {
     private int k = 22;
     private int x = (e == 4) ? k : ((c == 7) ? b : c);
     public int b(int x, int y) {
-        String cmd = A.cmd2String.get(3);
         int z = x + 5;
+        a = 10;
+        b = a + b + 3;
+        c = 113 + e;
+        e += 4;
         return z;
     }
 }
