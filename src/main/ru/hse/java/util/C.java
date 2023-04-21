@@ -13,7 +13,7 @@ public class C {
     }
 
     public int extract() {
-        int z = x + 5;
+        int z = 5;
         a = 10;
         b = a + b + 3;
         c = 113 + e;

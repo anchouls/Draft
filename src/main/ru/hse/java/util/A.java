@@ -12,7 +12,7 @@ public class A {
     }
 
     public int methodA2() {
-        int b = first + third;
+        int b = third + third;
         return b;
     }
 }
